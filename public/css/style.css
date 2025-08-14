@@ -1,0 +1,241 @@
+/* ===============================
+   RESET & BASICS
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* ===============================
+   HEADER
+================================ */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+header .logo {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ff6600;
+}
+
+/* ===============================
+   HERO SECTION
+================================ */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff6600, #ff9900);
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.hero button {
+    background: #fff;
+    color: #ff6600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #ff6600;
+    color: #fff;
+}
+
+/* ===============================
+   INFO SECTIONS
+================================ */
+.info {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.info h2 {
+    margin-bottom: 10px;
+    color: #ff6600;
+}
+
+/* Features Section */
+.features {
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+}
+
+.chat-box {
+    background: #f5f5f5;
+    padding: 10px;
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.message.user {
+    background: #d1e7dd;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-align: right;
+}
+
+.message.bot {
+    background: #fff3cd;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 5px 0;
+    text-align: left;
+}
+
+.features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+.features ul {
+    max-width: 600px;
+    margin: auto;
+    list-style: none;
+}
+
+.features ul li {
+    background: #fff;
+    padding: 12px;
+    margin: 8px 0;
+    border-left: 5px solid #ff6600;
+    font-size: 1rem;
+}
+
+/* Placeholder Section */
+.placeholder {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.placeholder h2 {
+    color: #ff6600;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+/* Footer Dot (Gloomy Style) */
+.footer-dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 8px;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-dot:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.2);
+}
+
+/* Hidden Info Text */
+.footer-info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    color: #ccc;
+    font-size: 0.9em;
+    margin-top: 10px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+}
+
+.footer-info.show {
+    opacity: 1;
+    max-height: 50px;
+    animation: slideFadeIn 0.6s ease forwards;
+}
+
+/* Slide Fade Animation */
+@keyframes slideFadeIn {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Developer Popup on Hover */
+.dev-popup {
+    display: none;
+    position: absolute;
+    bottom: 20px;
+    left: -60px;
+    background-color: #222;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    white-space: nowrap;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.footer-dot:hover .dev-popup {
+    display: block;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

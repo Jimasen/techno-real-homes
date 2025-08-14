@@ -1,0 +1,18 @@
+{
+  "name": "genkit-flows",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "genkit start -- npx tsx --watch index.ts",
+    "start": "genkit start -- node index.js"
+  },
+  "dependencies": {
+    "@genkit-ai/core": "^1.16.0",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "genkit-cli": "^1.15.5",
+    "tsx": "^4.20.3"
+  }
+}

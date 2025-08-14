@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techno Real Homes</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">🏠 Techno Real Homes</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to Techno Real Homes</h1>
+    <p>Your dream home is just a click away.</p>
+    <button id="approvalBtn">Get Details</button>
+  </section>
+
+  <!-- Firebase Property Form -->
+  <section>
+    <h2>Add a Property</h2>
+    <input type="text" id="propertyName" placeholder="Name">
+    <input type="text" id="propertyLocation" placeholder="Location">
+    <input type="number" id="propertyPrice" placeholder="Price">
+    <button id="saveBtn">Save Property</button>
+  </section>
+
+  <!-- AI Assistant -->
+  <section>
+    <h2>Ask Our AI Real Estate Assistant</h2>
+    <textarea id="aiQuestion" placeholder="Type your question..."></textarea>
+    <button id="sendAiBtn">Ask AI</button>
+    <div id="aiResponse" class="ai-response">AI response will appear here...</div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Techno Real Homes. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/firebase.js"></script>
+  <script src="js/ai-chat.js"></script>
+  <script src="js/approval-popup.js"></script>
+</body>
+</html>

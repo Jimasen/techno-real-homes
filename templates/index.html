@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techno Real Homes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <img src="images/logo.png" alt="Techno Real Homes Logo" class="logo">
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<main>
+    <section id="hero">
+        <h1>Welcome to Techno Real Homes</h1>
+        <p>Your trusted partner in innovative real estate solutions.</p>
+        <button id="approvalBtn">Get Details</button>
+    </section>
+
+    <section id="info">
+        <h2>About Our Projects</h2>
+        <p>[Placeholder text — replace with your own]</p>
+        <img src="images/placeholder.jpg" alt="Project Image">
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Techno Real Homes — All Rights Reserved</p>
+</footer>
+
+<!-- Popup -->
+<div id="approvalPopup" class="popup hidden">
+    <div class="popup-content">
+        <h2>Do you allow Techno Real Homes to send you details?</h2>
+        <button onclick="sendApproval(true)">Yes</button>
+        <button onclick="sendApproval(false)">No</button>
+    </div>
+</div>
+
+</body>
+</html>
