@@ -7,9 +7,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="logo">🏠 Techno Real Homes</div>
+    <h1>Techno Real Homes</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -18,38 +17,31 @@
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Welcome to Techno Real Homes</h1>
-    <p>Your dream home is just a click away.</p>
-    <button id="approvalBtn">Get Details</button>
-  </section>
+  <main>
+    <h2>Welcome to Techno Real Homes</h2>
+    <p>Your trusted partner in modern real estate solutions.</p>
 
-  <!-- Firebase Property Form -->
-  <section>
-    <h2>Add a Property</h2>
-    <input type="text" id="propertyName" placeholder="Name">
-    <input type="text" id="propertyLocation" placeholder="Location">
-    <input type="number" id="propertyPrice" placeholder="Price">
-    <button id="saveBtn">Save Property</button>
-  </section>
+    <!-- Firebase Property Form -->
+    <section>
+      <h2>Add a Property</h2>
+      <input type="text" id="propertyName" placeholder="Name">
+      <input type="text" id="propertyLocation" placeholder="Location">
+      <input type="number" id="propertyPrice" placeholder="Price">
+      <button id="saveBtn">Save Property</button>
+    </section>
 
-  <!-- AI Assistant -->
-  <section>
-    <h2>Ask Our AI Real Estate Assistant</h2>
-    <textarea id="aiQuestion" placeholder="Type your question..."></textarea>
-    <button id="sendAiBtn">Ask AI</button>
-    <div id="aiResponse" class="ai-response">AI response will appear here...</div>
-  </section>
+    <!-- Property List Section -->
+    <section>
+      <h2>Available Properties</h2>
+      <ul id="propertyList"></ul>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
-    <p>© 2025 Techno Real Homes. All rights reserved.</p>
+    <p>&copy; 2025 Techno Real Homes. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Firebase + App Scripts -->
   <script type="module" src="js/firebase.js"></script>
-  <script src="js/ai-chat.js"></script>
-  <script src="js/approval-popup.js"></script>
 </body>
 </html>

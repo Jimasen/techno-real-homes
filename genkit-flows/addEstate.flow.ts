@@ -1,44 +1,27 @@
-import { defineFlow } from "@genkit-ai/flow";
-import { generate } from "@genkit-ai/core";
+// flows/addEstate.flow.ts
+import { GENKIT_CONFIG } from "../genkit.config";
+import { genkit } from "genkit";
+import { googleAI } from "@genkit-ai/googleai";
 import fetch from "node-fetch";
 
-export const addEstateFlow = defineFlow({
-  name: "addEstateFlow",
-  inputSchema: {
-    type: "object",
-    properties: {
-      name: { type: "string" },
-      description: { type: "string" }
-    },
-    required: ["name"]
-  },
-  outputSchema: {
-    type: "object",
-    properties: {
-      success: { type: "boolean" },
-      id: { type: "number" }
-    }
-  }
-}, async (input) => {
-  let { name, description } = input;
+const ai = genkit({
+  plugins: [googleAI()],
+  model: googleAI.model("gemini-2.5-flash")
+});
 
-  // If no description, let AI generate one
-  if (!description || description.trim() === "") {
-    const aiResponse = await generate({
-      model: "gpt-4o-mini", // Or your preferred model
-      prompt: `Write a professional real estate listing description for an estate named "${name}". 
-               Make it sound attractive, highlighting location, amenities, and lifestyle.`
-    });
-    description = aiResponse.outputText.trim();
+export async function addEstate(name: string, description?: string) {
+  if (!description || !description.trim()) {
+    const response = await ai.generate(
+      `Write a professional real estate listing description for an estate named "${name}".`
+    );
+    description = response.text;
   }
 
-  // Send to PHP API
-  const response = await fetch("http://localhost/techno_real_homes/API.php?action=add", {
+  const resp = await fetch(`${GENKIT_CONFIG.apiUrl}?action=add`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ name, description })
   });
 
-  const result = await response.json();
-  return result;
-});
+  return await resp.json();
+}

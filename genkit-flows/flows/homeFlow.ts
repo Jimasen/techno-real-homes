@@ -1,24 +1,24 @@
 import { defineFlow } from "@genkit-ai/flow";
-import fetch from "node-fetch"; // make sure to install: npm install node-fetch
+import { z } from "zod";
+import fetch from "node-fetch";
 
-export const homeFlow = defineFlow("homeFlow", async () => {
-  try {
-    // Example API call to your PHP backend
-    const response = await fetch("http://localhost:8000/API.php");
-    if (!response.ok) {
-      throw new Error(`Backend returned ${response.status}`);
+export const homeFlow = defineFlow(
+  {
+    name: "homeFlow",
+    inputSchema: z.object({}).optional(),
+    outputSchema: z.object({
+      message: z.string().optional(),
+      backendData: z.any().optional(),
+      error: z.string().optional()
+    })
+  },
+  async () => {
+    try {
+      const response = await fetch("http://localhost:8000/API.php");
+      const data = await response.json();
+      return { message: "Data fetched successfully from PHP backend", backendData: data };
+    } catch (error: any) {
+      return { error: error.message };
     }
-
-    const data = await response.json();
-    console.log("Data from PHP backend:", data);
-
-    return {
-      message: "Data fetched successfully from PHP backend",
-      backendData: data
-    };
-  } catch (error) {
-    console.error("Error in homeFlow:", error);
-    return { error: error.message };
   }
-});
-
+);

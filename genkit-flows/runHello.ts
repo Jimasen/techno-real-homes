@@ -1,4 +1,3 @@
-// runHello.ts
 import { helloFlow } from "./flows/hello.flow.js";
 
 // Grab name from CLI arguments or default to "World"
